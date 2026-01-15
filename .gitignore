@@ -1,9 +1,14 @@
 # Node
 node_modules/
 
-# Angular
+# Angular (ignore only build & cache)
+frontend/node_modules/
 frontend/dist/
 frontend/.angular/
 
-# Env
+# Environment
 .env
+
+# OS
+Thumbs.db
+.DS_Store
