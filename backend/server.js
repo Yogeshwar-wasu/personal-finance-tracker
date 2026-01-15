@@ -1,25 +1,34 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path"); // <- MUST include this
 const app = express();
 
+// ===================== IMPORT API ROUTES =====================
 const transactionRoutes = require("./routes/transaction.routes");
 const balanceRoutes = require("./routes/balance.routes");
 const dashboardRoutes = require("./routes/dashboard.routes");
 const advanceRoutes = require("./routes/advance.routes");
 
+// ===================== MIDDLEWARE =====================
 app.use(cors());
 app.use(express.json());
 
-app.use("/transactions", transactionRoutes);
-app.use("/balance", balanceRoutes);
-app.use("/dashboard", dashboardRoutes);
-app.use("/advance", advanceRoutes);
+// ===================== API ROUTES =====================
+// Prefix APIs with /api to avoid conflicts with Angular routes
+app.use("/api/transactions", transactionRoutes);
+app.use("/api/balance", balanceRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/advance", advanceRoutes);
 
-const angularDistPath = path.join(__dirname, '../frontend/dist/frontend'); // replace with your Angular app name
+// ===================== SERVE ANGULAR =====================
+const angularDistPath = path.join(__dirname, "../frontend/dist/frontend"); // change 'frontend' if your Angular dist folder name differs
 app.use(express.static(angularDistPath));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(angularDistPath, 'index.html'));
+// Catch all other routes and return Angular index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(angularDistPath, "index.html"));
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+// ===================== START SERVER =====================
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
