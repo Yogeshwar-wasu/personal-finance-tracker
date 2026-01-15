@@ -21,8 +21,9 @@ app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/advance", advanceRoutes);
 
 // ===================== SERVE ANGULAR =====================
-const angularDistPath = path.join(__dirname, "../frontend/dist/frontend");
-app.use(express.static(angularDistPath));
+const angularDistPath = path.join(__dirname, "../frontend/dist/frontend/browser");
+app.use(express.static(angularDistPath)); 
+
 
 // Catch all frontend routes and serve Angular index.html
 app.get("*", (req, res) => {
