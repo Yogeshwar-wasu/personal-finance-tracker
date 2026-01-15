@@ -38,7 +38,6 @@ export class BalanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.transactionId = this.route.snapshot.paramMap.get('id');
-    console.log("Received SR:", this.transactionId);
     if (this.transactionId) {
       this.getBalance(this.transactionId);
     }
@@ -69,34 +68,36 @@ export class BalanceComponent implements OnInit {
 
   deleteRow(index: number) {
     const row = this.balanceRows[index];
-    const confirmed = confirm(`Are you sure you want to delete "${row.name}"?`);
+    if (!confirm(`Are you sure you want to delete "${row.name}"?`)) return;
 
-    if (confirmed) {
-      if (row.id) {
-        this.apiService.deleteBalanceRow(row.id).subscribe({
-          next: (res: any) => {
-            alert("Row deleted successfully!");
-            this.balanceRows.splice(index, 1);
-            this.balanceAmount = res.newBalance;
-          },
-          error: (err) => {
-            console.error(err);
-            alert("Error deleting row");
-          }
-        });
-      } else {
-        this.balanceRows.splice(index, 1);
-        this.calculateAmounts();
-      }
+    if (row.id) {
+      this.apiService.deleteBalanceRow(row.id).subscribe({
+        next: (res: any) => {
+          alert('Row deleted successfully ✅');
+          this.balanceRows.splice(index, 1);
+          this.calculateAmounts();
+        },
+        error: (err) => {
+          console.error(err);
+          alert("Error deleting row");
+        }
+      });
+    } else {
+      this.balanceRows.splice(index, 1);
+      this.calculateAmounts();
     }
   }
 
   calculateAmounts() {
-    this.amountUsed = this.balanceRows.reduce((sum, r) => {
+    let used = 0;
+
+    this.balanceRows.forEach(r => {
       const amt = Number(r.amount);
-      return sum + (isNaN(amt) ? 0 : amt);
-    }, 0);
-    this.balanceAmount = (Number(this.totalAmount) || 0) - this.amountUsed;
+      used += isNaN(amt) ? 0 : amt;
+    });
+
+    this.amountUsed = used;
+    this.balanceAmount = (Number(this.totalAmount) || 0) - used;
   }
 
   save() {
@@ -106,24 +107,21 @@ export class BalanceComponent implements OnInit {
       date: row.date ? row.date : null
     }));
 
-    console.log("Prepared rows:", rowsWithTransaction);
-
-    if (rowsWithTransaction.length > 0) {
-      this.apiService.saveBalanceRows(rowsWithTransaction).subscribe({
-        next: (res) => {
-          alert('Saved Successfully!');
-          console.log(res);
-        },
-        error: (err) => {
-          console.error(err);
-          alert('Error saving data');
-        }
-      });
-    }
-    else {
+    if (!rowsWithTransaction.length) {
       alert('No rows to save!');
-      console.error('No rows with transaction found');
+      return;
     }
+
+    this.apiService.saveBalanceRows(rowsWithTransaction).subscribe({
+      next: (res) => {
+        alert('Saved successfully ✅');
+        this.calculateAmounts();
+      },
+      error: (err) => {
+        console.error(err);
+        alert('Error saving data');
+      }
+    });
   }
 
   exportToExcel(): void {
@@ -162,9 +160,6 @@ export class BalanceComponent implements OnInit {
       { wch: 10 },
       { wch: 30 },
       { wch: 15 },
-      { wch: 15 },
-      { wch: 5 },
-      { wch: 20 },
       { wch: 15 }
     ];
 
@@ -191,11 +186,9 @@ export class BalanceComponent implements OnInit {
     const dd = String(today.getDate()).padStart(2, '0');
     const mm = String(today.getMonth() + 1).padStart(2, '0');
     const yyyy = today.getFullYear();
-
     const formattedDate = `${dd}-${mm}-${yyyy}`;
-    const fullFileName = `${fileName}_${formattedDate}.xlsx`;
 
-    saveAs(data, fullFileName);
+    saveAs(data, `${fileName}_${formattedDate}.xlsx`);
   }
 
 

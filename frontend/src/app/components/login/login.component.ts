@@ -27,7 +27,7 @@ export class LoginComponent {
 
     // simulate API delay
     setTimeout(() => {
-      if (this.username === 'admin' && this.password === '1234') {
+      if (this.username === 'Yogesh' && this.password === 'Welcome@123') {
         localStorage.setItem('token', 'logged-in');
         this.router.navigate(['/']);
       } else {

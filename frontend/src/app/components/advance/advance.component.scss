@@ -152,6 +152,15 @@
     color: #4CAF50; /* green icon */
 }
 
+.add-btn:hover:not(:disabled) {
+  background: #43a047;
+  transform: translateY(-1px);
+}
+
+.add-btn:disabled {
+  background: #43a047;
+  cursor: not-allowed;
+}
 .delete-btn {
     border-color: #f44336; /* red border */
 }

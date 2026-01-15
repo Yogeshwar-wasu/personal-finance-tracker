@@ -1,142 +1,95 @@
 const express = require("express");
 const router = express.Router();
-const { executeQuery } = require("../db");
+const { readJSON, writeJSON, getNextId } = require("../utils/jsonDb");
 
-router.post("/save", async (req, res) => {
+router.post("/save", (req, res) => {
   try {
     const rows = req.body.rows;
+    if (!rows || !rows.length) return res.status(400).json({ message: "No rows provided" });
 
-    if (!rows || rows.length === 0) {
-      return res.status(400).json({ message: "No rows provided" });
-    }
+    let items = readJSON("advanceItems.json");
+    let payments = readJSON("advancePayments.json");
 
-    for (const row of rows) {
-      let advanceItemId;
+    rows.forEach(row => {
+      let itemId;
 
       if (row.id) {
-        // Update existing advance_item
-        await executeQuery(
-          "UPDATE advance_item SET name = ?, amount = ? WHERE id = ?",
-          [row.name, row.amount, row.id]
-        );
-        advanceItemId = row.id;
+        const item = items.find(i => i.id === row.id);
+        item.name = row.name;
+        item.amount = row.amount;
+        itemId = item.id;
       } else {
-        // Insert new advance_item
-        const result = await executeQuery(
-          "INSERT INTO advance_item (name, amount) VALUES (?, ?)",
-          [row.name, row.amount]
-        );
-        advanceItemId = result.insertId;
+        itemId = getNextId(items);
+        items.push({
+          id: itemId,
+          name: row.name,
+          amount: row.amount,
+          status: "NOT_USED"
+        });
       }
 
-      // Handle payments
       let totalPayments = 0;
-      if (row.payments && row.payments.length > 0) {
-        for (const payment of row.payments) {
-          const paymentDate = payment.date ? new Date(payment.date) : null;
-          totalPayments += Number(payment.paymentAmount || 0);
 
-          if (payment.id) {
-            // Update existing payment
-            await executeQuery(
-              "UPDATE advance_payment SET payment_amount = ?, payment_date = ?, balance = ? WHERE id = ?",
-              [payment.paymentAmount, paymentDate, payment.balance, payment.id]
-            );
-          } else {
-            // Insert new payment
-            await executeQuery(
-              "INSERT INTO advance_payment (advance_item_id, payment_amount, payment_date, balance) VALUES (?, ?, ?, ?)",
-              [advanceItemId, payment.paymentAmount, paymentDate, payment.balance]
-            );
-          }
+      (row.payments || []).forEach(p => {
+        totalPayments += Number(p.paymentAmount || 0);
+
+        if (p.id) {
+          const pay = payments.find(x => x.id === p.id);
+          pay.paymentAmount = p.paymentAmount;
+          pay.date = p.date;
+          pay.balance = p.balance;
+        } else {
+          payments.push({
+            id: getNextId(payments),
+            advance_item_id: itemId,
+            paymentAmount: p.paymentAmount,
+            date: p.date,
+            balance: p.balance
+          });
         }
-      }
-      const amount = Number(row.amount || 0);
-      const balanceAmount = amount - totalPayments;
+      });
 
-      let status = "NOT_USED";
-      if (balanceAmount === 0 && amount > 0) {
-        status = "FULL_USED";
-      } else if (balanceAmount < amount && balanceAmount > 0) {
-        status = "PARTIAL_USED";
-      }
+      const balance = row.amount - totalPayments;
+      const item = items.find(i => i.id === itemId);
 
-      // 4️⃣ Update status
-      await executeQuery(
-        "UPDATE advance_item SET status = ? WHERE id = ?",
-        [status, advanceItemId]
-      );
-    }
+      item.status =
+        balance === 0 ? "FULL_USED" :
+        balance < row.amount ? "PARTIAL_USED" : "NOT_USED";
+    });
+
+    writeJSON("advanceItems.json", items);
+    writeJSON("advancePayments.json", payments);
 
     res.json({ message: "Advance data saved successfully" });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Save failed", error: err });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
   }
 });
 
+router.get("/all", (req, res) => {
+  const items = readJSON("advanceItems.json");
+  const payments = readJSON("advancePayments.json");
 
-router.get("/all", async (req, res) => {
- try {
-    // Get all advance items
-    const items = await executeQuery("SELECT * FROM advance_item ORDER BY id ASC");
-
-    // Get all payments
-    const payments = await executeQuery("SELECT * FROM advance_payment ORDER BY id ASC");
-
-    // Map payments to their advance item
-    const data = items.map(item => ({
-      id: item.id,
-      name: item.name,
-      amount: Number(item.amount),
-      status: item.status,
-      payments: payments
-        .filter(p => p.advance_item_id === item.id)
-        .map(p => ({
-          id: p.id,
-          paymentAmount: Number(p.payment_amount),
-          date: p.payment_date ? p.payment_date.toISOString().split("T")[0] : "",
-          balance: Number(p.balance)
-        }))
-    }));
-
-    res.json(data);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Failed to fetch advance items", error: err });
-  }
+  res.json(items.map(i => ({
+    ...i,
+    payments: payments.filter(p => p.advance_item_id === i.id)
+  })));
 });
 
-router.delete("/delete-row/:id", async (req, res) => {
-  try {
-    const rowId = req.params.id;
-console.log(rowId);
+router.delete("/delete-row/:id", (req, res) => {
+  let items = readJSON("advanceItems.json").filter(i => i.id != req.params.id);
+  let payments = readJSON("advancePayments.json").filter(p => p.advance_item_id != req.params.id);
 
-    await executeQuery("DELETE FROM advance_item WHERE id = ?", [rowId]);
+  writeJSON("advanceItems.json", items);
+  writeJSON("advancePayments.json", payments);
 
-
-    res.json({ message: "Row deleted successfully" });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Delete failed", details: err });
-  }
-});
-router.delete("/delete-payment/:id", async (req, res) => {
-  try {
-    const rowId = req.params.id;
-    console.log(rowId);
-    
-    await executeQuery("DELETE FROM advance_payment WHERE id = ?", [rowId]);
-
-    res.json({ message: "Row deleted successfully" });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Delete failed", details: err });
-  }
+  res.json({ message: "Row deleted" });
 });
 
+router.delete("/delete-payment/:id", (req, res) => {
+  let payments = readJSON("advancePayments.json").filter(p => p.id != req.params.id);
+  writeJSON("advancePayments.json", payments);
+  res.json({ message: "Payment deleted" });
+});
 
 module.exports = router;

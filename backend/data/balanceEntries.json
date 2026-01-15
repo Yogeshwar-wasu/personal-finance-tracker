@@ -1,0 +1,1823 @@
+[
+  {
+    "id": 349,
+    "date": null,
+    "name": "Aachari advance",
+    "amount": 9500,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 350,
+    "date": null,
+    "name": "hall",
+    "amount": 3000,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 351,
+    "date": null,
+    "name": "car servicing",
+    "amount": 6000,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 352,
+    "date": null,
+    "name": "Camera advance",
+    "amount": 2500,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 353,
+    "date": null,
+    "name": "maharaj katol",
+    "amount": 1000,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 354,
+    "date": null,
+    "name": "petrol kalmeshwar",
+    "amount": 1000,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 355,
+    "date": null,
+    "name": "devach saman",
+    "amount": 500,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 356,
+    "date": null,
+    "name": "cutting",
+    "amount": 400,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 357,
+    "date": null,
+    "name": "biryani",
+    "amount": 200,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 358,
+    "date": null,
+    "name": "other",
+    "amount": 900,
+    "created_on": "2026-01-13 16:43:43.000000",
+    "transaction_id": 4
+  },
+  {
+    "id": 543,
+    "date": "2025-11-24",
+    "name": "snehal kapade",
+    "amount": 26560,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 544,
+    "date": "2025-11-24",
+    "name": "nasta",
+    "amount": 1174,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 545,
+    "date": "2025-11-24",
+    "name": "kurti haldi",
+    "amount": 2850,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 546,
+    "date": "2025-11-24",
+    "name": "petrol",
+    "amount": 1080,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 547,
+    "date": "2025-11-24",
+    "name": "parking",
+    "amount": 200,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 548,
+    "date": "2025-11-24",
+    "name": "chappal aai",
+    "amount": 200,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 549,
+    "date": "2025-11-24",
+    "name": "auto",
+    "amount": 80,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 550,
+    "date": "2025-11-24",
+    "name": "nasta bajargao",
+    "amount": 80,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 551,
+    "date": "2025-11-24",
+    "name": "priya tai nasta",
+    "amount": 100,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 552,
+    "date": "2025-11-24",
+    "name": "kirana priya tai",
+    "amount": 1200,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 553,
+    "date": null,
+    "name": "sharda tai ahir",
+    "amount": 5000,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 554,
+    "date": null,
+    "name": "shadi saoner ahir",
+    "amount": 1255,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 555,
+    "date": null,
+    "name": "ahir prakash",
+    "amount": 500,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 556,
+    "date": null,
+    "name": "paint room",
+    "amount": 3210,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 557,
+    "date": null,
+    "name": "primer , bled cutting machine",
+    "amount": 300,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 558,
+    "date": null,
+    "name": "line feeting",
+    "amount": 2600,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 559,
+    "date": null,
+    "name": "paint bedroom",
+    "amount": 1130,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 560,
+    "date": null,
+    "name": "pappa medicine",
+    "amount": 777,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 561,
+    "date": "2025-12-28",
+    "name": "paint kitchen",
+    "amount": 725,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 562,
+    "date": null,
+    "name": "parade rod",
+    "amount": 270,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 563,
+    "date": "2025-12-30",
+    "name": "motar reaping",
+    "amount": 600,
+    "created_on": "2026-01-13 16:58:52.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 564,
+    "date": "2026-01-01",
+    "name": "darwaja paint",
+    "amount": 460,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 565,
+    "date": "2026-01-04",
+    "name": "Patrika advance",
+    "amount": 9000,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 566,
+    "date": null,
+    "name": "paint hall",
+    "amount": 1370,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 567,
+    "date": null,
+    "name": "hall parade",
+    "amount": 300,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 568,
+    "date": null,
+    "name": "mirror",
+    "amount": 300,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 569,
+    "date": null,
+    "name": "polish darwaja",
+    "amount": 350,
+    "created_on": "2026-01-13 16:58:53.000000",
+    "transaction_id": 8
+  },
+  {
+    "id": 797,
+    "date": null,
+    "name": "line bill",
+    "amount": 1160,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 798,
+    "date": null,
+    "name": "line bill",
+    "amount": 1680,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 799,
+    "date": null,
+    "name": "rd",
+    "amount": 10000,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 800,
+    "date": null,
+    "name": "car emi",
+    "amount": 14017,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 801,
+    "date": null,
+    "name": "pappa recharge",
+    "amount": 450,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 802,
+    "date": null,
+    "name": "press light",
+    "amount": 930,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 803,
+    "date": null,
+    "name": "nasta",
+    "amount": 320,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 804,
+    "date": null,
+    "name": "fasttag",
+    "amount": 200,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 805,
+    "date": null,
+    "name": "snehal recharge",
+    "amount": 319,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 806,
+    "date": null,
+    "name": "sbi",
+    "amount": 1820,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 807,
+    "date": "2025-10-07",
+    "name": "pappa hospital",
+    "amount": 200,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 808,
+    "date": null,
+    "name": "bread chiwada",
+    "amount": 165,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 809,
+    "date": null,
+    "name": "bp medician",
+    "amount": 227,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 810,
+    "date": "2025-10-08",
+    "name": "petrol nagpur",
+    "amount": 480,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 811,
+    "date": "2025-10-11",
+    "name": "petrol buller",
+    "amount": 880,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 812,
+    "date": "2025-10-11",
+    "name": "lighting",
+    "amount": 2200,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 813,
+    "date": null,
+    "name": "recharge",
+    "amount": 1000,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 814,
+    "date": null,
+    "name": "perfume",
+    "amount": 500,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 815,
+    "date": null,
+    "name": "petrol",
+    "amount": 1080,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 816,
+    "date": null,
+    "name": "dosa",
+    "amount": 130,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 817,
+    "date": null,
+    "name": "party",
+    "amount": 500,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 818,
+    "date": null,
+    "name": "yogesh",
+    "amount": 1000,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 819,
+    "date": null,
+    "name": "wire",
+    "amount": 500,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 820,
+    "date": null,
+    "name": "pappa cote",
+    "amount": 850,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 821,
+    "date": null,
+    "name": "pappa medicine",
+    "amount": 500,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 822,
+    "date": null,
+    "name": "j1 hotel bday",
+    "amount": 1020,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 823,
+    "date": null,
+    "name": "other",
+    "amount": 197,
+    "created_on": "2026-01-13 23:26:31.000000",
+    "transaction_id": 5
+  },
+  {
+    "id": 858,
+    "transaction_id": 1,
+    "name": "Suvarna tai usane return",
+    "amount": 5000,
+    "date": null
+  },
+  {
+    "id": 859,
+    "transaction_id": 1,
+    "name": "Suvarna tai kapade",
+    "amount": 5000,
+    "date": null
+  },
+  {
+    "id": 860,
+    "transaction_id": 1,
+    "name": "Aparna tai kapade",
+    "amount": 5000,
+    "date": null
+  },
+  {
+    "id": 861,
+    "transaction_id": 1,
+    "name": "Yogesh",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 862,
+    "transaction_id": 1,
+    "name": "devi samaj bhavan",
+    "amount": 1000,
+    "date": "2025-09-22"
+  },
+  {
+    "id": 863,
+    "transaction_id": 1,
+    "name": "Hospital Eye",
+    "amount": 400,
+    "date": "2025-09-22"
+  },
+  {
+    "id": 864,
+    "transaction_id": 1,
+    "name": "Hospital Aai",
+    "amount": 250,
+    "date": null
+  },
+  {
+    "id": 865,
+    "transaction_id": 1,
+    "name": "Chasma",
+    "amount": 1200,
+    "date": "2025-09-22"
+  },
+  {
+    "id": 866,
+    "transaction_id": 1,
+    "name": "khidki",
+    "amount": 3000,
+    "date": "2025-09-24"
+  },
+  {
+    "id": 867,
+    "transaction_id": 1,
+    "name": "wifi",
+    "amount": 600,
+    "date": "2025-09-25"
+  },
+  {
+    "id": 868,
+    "transaction_id": 1,
+    "name": "Insurance Car",
+    "amount": 4800,
+    "date": "2025-09-26"
+  },
+  {
+    "id": 869,
+    "transaction_id": 1,
+    "name": "Fast-tag Rechatge",
+    "amount": 350,
+    "date": "2025-09-27"
+  },
+  {
+    "id": 870,
+    "transaction_id": 1,
+    "name": "Yogesh",
+    "amount": 750,
+    "date": "2025-09-27"
+  },
+  {
+    "id": 871,
+    "transaction_id": 1,
+    "name": "Shegoav petrol",
+    "amount": 3280,
+    "date": "2025-09-27"
+  },
+  {
+    "id": 872,
+    "transaction_id": 1,
+    "name": "pappa medicine",
+    "amount": 550,
+    "date": null
+  },
+  {
+    "id": 873,
+    "transaction_id": 1,
+    "name": "Gold Mini-mangalsutra",
+    "amount": 56099,
+    "date": "2025-09-29"
+  },
+  {
+    "id": 874,
+    "transaction_id": 1,
+    "name": "Gold",
+    "amount": 8500,
+    "date": "2025-09-29"
+  },
+  {
+    "id": 875,
+    "transaction_id": 1,
+    "name": "Aai Baba",
+    "amount": 300,
+    "date": "2025-09-29"
+  },
+  {
+    "id": 876,
+    "transaction_id": 1,
+    "name": "Nasta katol",
+    "amount": 400,
+    "date": "2025-09-29"
+  },
+  {
+    "id": 877,
+    "transaction_id": 1,
+    "name": "Snehal laccha",
+    "amount": 9975,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 878,
+    "transaction_id": 1,
+    "name": "iniche saman",
+    "amount": 1750,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 879,
+    "transaction_id": 1,
+    "name": "bags inichi",
+    "amount": 800,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 880,
+    "transaction_id": 1,
+    "name": "basket",
+    "amount": 550,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 881,
+    "transaction_id": 1,
+    "name": "duppate, topi",
+    "amount": 1550,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 882,
+    "transaction_id": 1,
+    "name": "nasta nagpur",
+    "amount": 780,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 883,
+    "transaction_id": 1,
+    "name": "parking",
+    "amount": 200,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 884,
+    "transaction_id": 1,
+    "name": "mekup Snehal",
+    "amount": 850,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 885,
+    "transaction_id": 1,
+    "name": "bags snehal, aai",
+    "amount": 480,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 886,
+    "transaction_id": 1,
+    "name": "supari",
+    "amount": 310,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 887,
+    "transaction_id": 1,
+    "name": "kardone",
+    "amount": 100,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 888,
+    "transaction_id": 1,
+    "name": "petrol",
+    "amount": 880,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 889,
+    "transaction_id": 1,
+    "name": "nasta bajargao",
+    "amount": 100,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 890,
+    "transaction_id": 1,
+    "name": "aai hospital",
+    "amount": 500,
+    "date": "2025-10-03"
+  },
+  {
+    "id": 891,
+    "transaction_id": 1,
+    "name": "dasara",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 892,
+    "transaction_id": 1,
+    "name": "nasta bajargao",
+    "amount": 200,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 893,
+    "transaction_id": 1,
+    "name": "dosa",
+    "amount": 200,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 894,
+    "transaction_id": 1,
+    "name": "snehal mobile cover",
+    "amount": 250,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 895,
+    "transaction_id": 1,
+    "name": "nasta nagpur rambhandar + auto",
+    "amount": 500,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 896,
+    "transaction_id": 1,
+    "name": "aai shadi",
+    "amount": 3295,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 897,
+    "transaction_id": 1,
+    "name": "snehal chappal",
+    "amount": 800,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 898,
+    "transaction_id": 1,
+    "name": "priya tai petrol",
+    "amount": 160,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 899,
+    "transaction_id": 1,
+    "name": "yogesh chappal",
+    "amount": 350,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 900,
+    "transaction_id": 1,
+    "name": "nasata (noodles+fried)",
+    "amount": 320,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 901,
+    "transaction_id": 1,
+    "name": "shenga buimung",
+    "amount": 200,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 902,
+    "transaction_id": 1,
+    "name": "Aai kojagiri",
+    "amount": 200,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 903,
+    "transaction_id": 1,
+    "name": "snehal makeup online",
+    "amount": 1278,
+    "date": "2025-10-06"
+  },
+  {
+    "id": 904,
+    "transaction_id": 1,
+    "name": "narar",
+    "amount": 600,
+    "date": "2025-10-07"
+  },
+  {
+    "id": 905,
+    "transaction_id": 1,
+    "name": "loan emi",
+    "amount": 6953,
+    "date": "2025-10-07"
+  },
+  {
+    "id": 906,
+    "transaction_id": 1,
+    "name": "photu frame",
+    "amount": 820,
+    "date": "2025-10-08"
+  },
+  {
+    "id": 907,
+    "transaction_id": 1,
+    "name": "gold ring",
+    "amount": 4000,
+    "date": "2025-10-08"
+  },
+  {
+    "id": 908,
+    "transaction_id": 1,
+    "name": "Pappa hospital",
+    "amount": 500,
+    "date": "2025-10-07"
+  },
+  {
+    "id": 909,
+    "transaction_id": 1,
+    "name": "Har adavance",
+    "amount": 1000,
+    "date": "2025-10-10"
+  },
+  {
+    "id": 910,
+    "transaction_id": 1,
+    "name": "mang dhol",
+    "amount": 2000,
+    "date": "2025-10-10"
+  },
+  {
+    "id": 911,
+    "transaction_id": 1,
+    "name": "bangadi, naklesh, shilai",
+    "amount": 2060,
+    "date": "2025-10-10"
+  },
+  {
+    "id": 912,
+    "transaction_id": 1,
+    "name": "camera advance",
+    "amount": 5000,
+    "date": "2025-10-12"
+  },
+  {
+    "id": 913,
+    "transaction_id": 1,
+    "name": "aachari advance",
+    "amount": 50000,
+    "date": "2025-10-13"
+  },
+  {
+    "id": 914,
+    "transaction_id": 1,
+    "name": "paint birla white",
+    "amount": 8050,
+    "date": "2025-10-15"
+  },
+  {
+    "id": 915,
+    "transaction_id": 1,
+    "name": "priya tai ahir",
+    "amount": 5000,
+    "date": "2025-10-17"
+  },
+  {
+    "id": 916,
+    "transaction_id": 1,
+    "name": "paint colour",
+    "amount": 1900,
+    "date": "2025-10-19"
+  },
+  {
+    "id": 917,
+    "transaction_id": 1,
+    "name": "paint",
+    "amount": 850,
+    "date": "2025-10-19"
+  },
+  {
+    "id": 918,
+    "transaction_id": 1,
+    "name": "painter",
+    "amount": 3000,
+    "date": "2025-10-22"
+  },
+  {
+    "id": 919,
+    "transaction_id": 1,
+    "name": "10 notes bandal ghari",
+    "amount": 2000,
+    "date": "2025-10-21"
+  },
+  {
+    "id": 920,
+    "transaction_id": 1,
+    "name": "paint",
+    "amount": 2000,
+    "date": "2025-10-22"
+  },
+  {
+    "id": 921,
+    "transaction_id": 1,
+    "name": "dry fruits",
+    "amount": 800,
+    "date": "2025-10-27"
+  },
+  {
+    "id": 922,
+    "transaction_id": 1,
+    "name": "painter",
+    "amount": 4000,
+    "date": "2025-10-28"
+  },
+  {
+    "id": 923,
+    "transaction_id": 1,
+    "name": "chocolate + papad",
+    "amount": 1000,
+    "date": "2025-10-28"
+  },
+  {
+    "id": 924,
+    "transaction_id": 1,
+    "name": "narar maar+ sof supari",
+    "amount": 571,
+    "date": "2025-10-26"
+  },
+  {
+    "id": 925,
+    "transaction_id": 1,
+    "name": "paint room",
+    "amount": 1020,
+    "date": "2025-10-30"
+  },
+  {
+    "id": 926,
+    "transaction_id": 1,
+    "name": "light feeting",
+    "amount": 2100,
+    "date": "2025-10-30"
+  },
+  {
+    "id": 927,
+    "transaction_id": 1,
+    "name": "tharmacol name",
+    "amount": 400,
+    "date": "2025-10-29"
+  },
+  {
+    "id": 928,
+    "transaction_id": 1,
+    "name": "paan, pede, foots, chocolate",
+    "amount": 1070,
+    "date": "2025-10-30"
+  },
+  {
+    "id": 929,
+    "transaction_id": 1,
+    "name": "engagement name",
+    "amount": 1500,
+    "date": "2025-10-31"
+  },
+  {
+    "id": 930,
+    "transaction_id": 1,
+    "name": "cake",
+    "amount": 1000,
+    "date": "2025-11-01"
+  },
+  {
+    "id": 931,
+    "transaction_id": 1,
+    "name": "aai, baba, aaji",
+    "amount": 2200,
+    "date": "2025-11-02"
+  },
+  {
+    "id": 932,
+    "transaction_id": 1,
+    "name": "aachari",
+    "amount": 20000,
+    "date": "2025-11-03"
+  },
+  {
+    "id": 933,
+    "transaction_id": 1,
+    "name": "haar",
+    "amount": 2500,
+    "date": "2025-11-04"
+  },
+  {
+    "id": 934,
+    "transaction_id": 1,
+    "name": "camera",
+    "amount": 5000,
+    "date": "2025-11-05"
+  },
+  {
+    "id": 935,
+    "transaction_id": 1,
+    "name": "pandit",
+    "amount": 900,
+    "date": "2025-11-06"
+  },
+  {
+    "id": 936,
+    "transaction_id": 1,
+    "name": "events",
+    "amount": 6000,
+    "date": "2025-11-07"
+  },
+  {
+    "id": 937,
+    "transaction_id": 1,
+    "name": "mang",
+    "amount": 3000,
+    "date": "2025-11-08"
+  },
+  {
+    "id": 938,
+    "transaction_id": 1,
+    "name": "hall",
+    "amount": 24500,
+    "date": "2025-11-09"
+  },
+  {
+    "id": 939,
+    "transaction_id": 1,
+    "name": "aachari",
+    "amount": 17000,
+    "date": "2025-11-10"
+  },
+  {
+    "id": 940,
+    "transaction_id": 1,
+    "name": "ahir kapade",
+    "amount": 22088,
+    "date": "2025-11-18"
+  },
+  {
+    "id": 941,
+    "transaction_id": 1,
+    "name": "ahir kapade",
+    "amount": 5950,
+    "date": "2025-11-18"
+  },
+  {
+    "id": 942,
+    "transaction_id": 2,
+    "name": "Tyre bullet",
+    "amount": 2500,
+    "date": "2025-11-29"
+  },
+  {
+    "id": 943,
+    "transaction_id": 2,
+    "name": "bullet silencer ",
+    "amount": 1600,
+    "date": "2025-11-29"
+  },
+  {
+    "id": 944,
+    "transaction_id": 2,
+    "name": "medicine ",
+    "amount": 235,
+    "date": "2025-11-29"
+  },
+  {
+    "id": 945,
+    "transaction_id": 2,
+    "name": "J1 nagpur",
+    "amount": 585,
+    "date": "2025-11-29"
+  },
+  {
+    "id": 946,
+    "transaction_id": 2,
+    "name": "petrol",
+    "amount": 900,
+    "date": null
+  },
+  {
+    "id": 947,
+    "transaction_id": 2,
+    "name": "haldiram",
+    "amount": 400,
+    "date": null
+  },
+  {
+    "id": 948,
+    "transaction_id": 2,
+    "name": "pappa medicine ",
+    "amount": 850,
+    "date": null
+  },
+  {
+    "id": 949,
+    "transaction_id": 2,
+    "name": "lightning ",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 950,
+    "transaction_id": 2,
+    "name": "sprey",
+    "amount": 310,
+    "date": null
+  },
+  {
+    "id": 951,
+    "transaction_id": 2,
+    "name": "nasata bajargao",
+    "amount": 80,
+    "date": null
+  },
+  {
+    "id": 952,
+    "transaction_id": 2,
+    "name": "narar, haldi",
+    "amount": 110,
+    "date": null
+  },
+  {
+    "id": 953,
+    "transaction_id": 2,
+    "name": "cash",
+    "amount": 1500,
+    "date": null
+  },
+  {
+    "id": 954,
+    "transaction_id": 2,
+    "name": "cement ",
+    "amount": 350,
+    "date": null
+  },
+  {
+    "id": 955,
+    "transaction_id": 2,
+    "name": "snehal recharge ",
+    "amount": 319,
+    "date": null
+  },
+  {
+    "id": 956,
+    "transaction_id": 2,
+    "name": "aai recharge ",
+    "amount": 200,
+    "date": null
+  },
+  {
+    "id": 957,
+    "transaction_id": 2,
+    "name": "car emi",
+    "amount": 14017,
+    "date": null
+  },
+  {
+    "id": 958,
+    "transaction_id": 2,
+    "name": "yogesh",
+    "amount": 800,
+    "date": null
+  },
+  {
+    "id": 959,
+    "transaction_id": 2,
+    "name": "facewash",
+    "amount": 200,
+    "date": null
+  },
+  {
+    "id": 960,
+    "transaction_id": 2,
+    "name": "loan emi",
+    "amount": 8018,
+    "date": null
+  },
+  {
+    "id": 961,
+    "transaction_id": 2,
+    "name": "petrol",
+    "amount": 1520,
+    "date": null
+  },
+  {
+    "id": 962,
+    "transaction_id": 2,
+    "name": "panchar",
+    "amount": 100,
+    "date": null
+  },
+  {
+    "id": 963,
+    "transaction_id": 2,
+    "name": "mall",
+    "amount": 210,
+    "date": null
+  },
+  {
+    "id": 964,
+    "transaction_id": 2,
+    "name": "kirana",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 965,
+    "transaction_id": 2,
+    "name": "snehal bodywash",
+    "amount": 400,
+    "date": null
+  },
+  {
+    "id": 966,
+    "transaction_id": 2,
+    "name": "camera cctv",
+    "amount": 1543,
+    "date": null
+  },
+  {
+    "id": 967,
+    "transaction_id": 2,
+    "name": "snehal ",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 968,
+    "transaction_id": 2,
+    "name": "petrol ",
+    "amount": 880,
+    "date": "2025-12-22"
+  },
+  {
+    "id": 969,
+    "transaction_id": 2,
+    "name": "biryani ",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 970,
+    "transaction_id": 2,
+    "name": "putting ",
+    "amount": 700,
+    "date": null
+  },
+  {
+    "id": 971,
+    "transaction_id": 2,
+    "name": "putting ",
+    "amount": 700,
+    "date": null
+  },
+  {
+    "id": 972,
+    "transaction_id": 2,
+    "name": "line bill",
+    "amount": 1400,
+    "date": null
+  },
+  {
+    "id": 973,
+    "transaction_id": 2,
+    "name": "other",
+    "amount": 298,
+    "date": null
+  },
+  {
+    "id": 974,
+    "transaction_id": 3,
+    "name": "Pappa Medicine",
+    "amount": 550,
+    "date": null
+  },
+  {
+    "id": 975,
+    "transaction_id": 3,
+    "name": "Gold",
+    "amount": 8500,
+    "date": null
+  },
+  {
+    "id": 976,
+    "transaction_id": 3,
+    "name": "Aai baba",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 977,
+    "transaction_id": 3,
+    "name": "Nasta",
+    "amount": 400,
+    "date": null
+  },
+  {
+    "id": 978,
+    "transaction_id": 3,
+    "name": "iniche saman",
+    "amount": 1750,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 979,
+    "transaction_id": 3,
+    "name": "bags inichi",
+    "amount": 800,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 980,
+    "transaction_id": 3,
+    "name": "basket",
+    "amount": 550,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 981,
+    "transaction_id": 3,
+    "name": "duppate, topi",
+    "amount": 1550,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 982,
+    "transaction_id": 3,
+    "name": "nasta nagpur",
+    "amount": 780,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 983,
+    "transaction_id": 3,
+    "name": "parking",
+    "amount": 200,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 984,
+    "transaction_id": 3,
+    "name": "mekup Snehal",
+    "amount": 850,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 985,
+    "transaction_id": 3,
+    "name": "bags snehal, aai",
+    "amount": 480,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 986,
+    "transaction_id": 3,
+    "name": "supari",
+    "amount": 310,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 987,
+    "transaction_id": 3,
+    "name": "kardone",
+    "amount": 100,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 988,
+    "transaction_id": 3,
+    "name": "petrol",
+    "amount": 880,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 989,
+    "transaction_id": 3,
+    "name": "priya tai usane",
+    "amount": 2000,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 990,
+    "transaction_id": 3,
+    "name": "nasta bajargao",
+    "amount": 100,
+    "date": "2025-10-01"
+  },
+  {
+    "id": 991,
+    "transaction_id": 3,
+    "name": "aai hospital",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 992,
+    "transaction_id": 3,
+    "name": "dasara",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 993,
+    "transaction_id": 3,
+    "name": "other",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 994,
+    "transaction_id": 3,
+    "name": "nasta bajargao",
+    "amount": 200,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 995,
+    "transaction_id": 3,
+    "name": "dosa",
+    "amount": 200,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 996,
+    "transaction_id": 3,
+    "name": "snehal mobile cover",
+    "amount": 250,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 997,
+    "transaction_id": 3,
+    "name": "nasta nagpur rambhandar + auto",
+    "amount": 500,
+    "date": "2025-10-04"
+  },
+  {
+    "id": 998,
+    "transaction_id": 3,
+    "name": "priya tai petrol",
+    "amount": 160,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 999,
+    "transaction_id": 3,
+    "name": "yogesh chappal",
+    "amount": 350,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 1000,
+    "transaction_id": 3,
+    "name": "nasata (noodles + fried)",
+    "amount": 320,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 1001,
+    "transaction_id": 3,
+    "name": "shenga buimung",
+    "amount": 200,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 1002,
+    "transaction_id": 3,
+    "name": "aai kojagiri",
+    "amount": 200,
+    "date": "2025-10-05"
+  },
+  {
+    "id": 1003,
+    "transaction_id": 3,
+    "name": "Pappa hospital",
+    "amount": 500,
+    "date": "2025-10-07"
+  },
+  {
+    "id": 1004,
+    "transaction_id": 3,
+    "name": "online sbi",
+    "amount": 500,
+    "date": "2025-10-08"
+  },
+  {
+    "id": 1005,
+    "transaction_id": 3,
+    "name": "other",
+    "amount": 220,
+    "date": null
+  },
+  {
+    "id": 1006,
+    "transaction_id": 6,
+    "name": "line bill",
+    "amount": 1730,
+    "date": null
+  },
+  {
+    "id": 1007,
+    "transaction_id": 6,
+    "name": "car emi",
+    "amount": 14017,
+    "date": null
+  },
+  {
+    "id": 1008,
+    "transaction_id": 6,
+    "name": "loan emi",
+    "amount": 8018,
+    "date": null
+  },
+  {
+    "id": 1009,
+    "transaction_id": 6,
+    "name": "fasial",
+    "amount": 600,
+    "date": null
+  },
+  {
+    "id": 1010,
+    "transaction_id": 6,
+    "name": "battery",
+    "amount": 1500,
+    "date": null
+  },
+  {
+    "id": 1011,
+    "transaction_id": 6,
+    "name": "petrol",
+    "amount": 680,
+    "date": null
+  },
+  {
+    "id": 1012,
+    "transaction_id": 6,
+    "name": "pappa medicine",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 1013,
+    "transaction_id": 6,
+    "name": "yogesh hospital",
+    "amount": 800,
+    "date": null
+  },
+  {
+    "id": 1014,
+    "transaction_id": 6,
+    "name": "bullet petrol",
+    "amount": 880,
+    "date": null
+  },
+  {
+    "id": 1015,
+    "transaction_id": 6,
+    "name": "javar",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 1016,
+    "transaction_id": 6,
+    "name": "peti from",
+    "amount": 1800,
+    "date": null
+  },
+  {
+    "id": 1017,
+    "transaction_id": 6,
+    "name": "bullet",
+    "amount": 1800,
+    "date": null
+  },
+  {
+    "id": 1018,
+    "transaction_id": 6,
+    "name": "nasta",
+    "amount": 300,
+    "date": null
+  },
+  {
+    "id": 1019,
+    "transaction_id": 6,
+    "name": "line bill",
+    "amount": 1570,
+    "date": null
+  },
+  {
+    "id": 1020,
+    "transaction_id": 6,
+    "name": "line bill",
+    "amount": 1270,
+    "date": null
+  },
+  {
+    "id": 1021,
+    "transaction_id": 6,
+    "name": "wifi recharge",
+    "amount": 707,
+    "date": null
+  },
+  {
+    "id": 1022,
+    "transaction_id": 6,
+    "name": "vi recharge",
+    "amount": 200,
+    "date": null
+  },
+  {
+    "id": 1023,
+    "transaction_id": 6,
+    "name": "bullet petrol",
+    "amount": 900,
+    "date": null
+  },
+  {
+    "id": 1024,
+    "transaction_id": 6,
+    "name": "bullet servicing",
+    "amount": 1500,
+    "date": null
+  },
+  {
+    "id": 1025,
+    "transaction_id": 6,
+    "name": "dj advance",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 1026,
+    "transaction_id": 6,
+    "name": "aai",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 1027,
+    "transaction_id": 6,
+    "name": "baba",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 1028,
+    "transaction_id": 7,
+    "name": "javar",
+    "amount": 1300,
+    "date": null
+  },
+  {
+    "id": 1029,
+    "transaction_id": 7,
+    "name": "dmart",
+    "amount": 1452,
+    "date": "2026-01-03"
+  },
+  {
+    "id": 1030,
+    "transaction_id": 7,
+    "name": "massage machine",
+    "amount": 350,
+    "date": null
+  },
+  {
+    "id": 1031,
+    "transaction_id": 7,
+    "name": "wallpaper kitchen ",
+    "amount": 500,
+    "date": null
+  },
+  {
+    "id": 1032,
+    "transaction_id": 7,
+    "name": "petrol car",
+    "amount": 980,
+    "date": "2026-01-03"
+  },
+  {
+    "id": 1033,
+    "transaction_id": 7,
+    "name": "lolipop",
+    "amount": 360,
+    "date": null
+  },
+  {
+    "id": 1034,
+    "transaction_id": 7,
+    "name": "mummy recharge",
+    "amount": 200,
+    "date": null
+  },
+  {
+    "id": 1035,
+    "transaction_id": 7,
+    "name": "shrikhand",
+    "amount": 170,
+    "date": null
+  },
+  {
+    "id": 1036,
+    "transaction_id": 7,
+    "name": "pappa recharge",
+    "amount": 450,
+    "date": null
+  },
+  {
+    "id": 1037,
+    "transaction_id": 7,
+    "name": "car emi",
+    "amount": 14017,
+    "date": null
+  },
+  {
+    "id": 1038,
+    "transaction_id": 7,
+    "name": "loan",
+    "amount": 8018,
+    "date": null
+  },
+  {
+    "id": 1039,
+    "transaction_id": 7,
+    "name": "petrol car",
+    "amount": 900,
+    "date": "2026-01-08"
+  },
+  {
+    "id": 1040,
+    "transaction_id": 7,
+    "name": "diwan",
+    "amount": 4000,
+    "date": "2026-01-08"
+  },
+  {
+    "id": 1041,
+    "transaction_id": 7,
+    "name": "sbi",
+    "amount": 2000,
+    "date": null
+  },
+  {
+    "id": 1042,
+    "transaction_id": 7,
+    "name": "aai baba",
+    "amount": 2000,
+    "date": null
+  },
+  {
+    "id": 1043,
+    "transaction_id": 7,
+    "name": "camera cctv",
+    "amount": 1000,
+    "date": null
+  },
+  {
+    "id": 1044,
+    "transaction_id": 7,
+    "name": "swapnil diwan ",
+    "amount": -4000,
+    "date": "2026-01-13"
+  }
+]

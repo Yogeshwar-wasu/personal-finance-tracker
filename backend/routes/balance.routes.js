@@ -1,146 +1,127 @@
 const express = require("express");
 const router = express.Router();
-const { executeQuery } = require("../db");
+const { readJSON, writeJSON, getNextId } = require("../utils/jsonDb");
 
-router.post("/save", async (req, res) => {
-  try {
-    const rows = req.body.rows;
+router.post("/save", (req, res) => {
+  const rows = req.body.rows;
+  const transactionId = Number(rows[0].transactionId);
 
-    if (!rows || rows.length === 0) {
-      return res.status(400).json({ message: "No rows received" });
-    }
+  let entries = readJSON("balanceEntries.json")
+    .filter(e => e.transaction_id !== transactionId);
 
-    const transactionId = rows[0].transactionId;
-
-    await executeQuery(
-      "DELETE FROM balance_entries WHERE transaction_id = ?",
-      [transactionId]
-    );
-
-    for (let row of rows) {
-      if (!row.name || !row.amount) continue;
-
-      const dateValue = row.date ? new Date(row.date) : null;
-
-      await executeQuery(
-        `INSERT INTO balance_entries (transaction_id, name, amount, date)
-         VALUES (?, ?, ?, ?)`,
-        [transactionId, row.name, row.amount, dateValue]
-      );
-    }
-
-    const totalSpentData = await executeQuery(
-      "SELECT SUM(amount) AS totalSpent FROM balance_entries WHERE transaction_id = ?",
-      [transactionId]
-    );
-
-    const totalSpent = Number(totalSpentData[0].totalSpent || 0);
-
-    const trx = await executeQuery(
-      "SELECT amount FROM transactions WHERE id = ?",
-      [transactionId]
-    );
-
-    const totalAmount = Number(trx[0].amount || 0);
-    const newBalance = totalAmount - totalSpent;
-
-    let status = "NOT_USED";
-
-    if (totalSpent > 0 && newBalance > 0) {
-      status = "PARTIAL_USED";
-    } else if (newBalance <= 0) {
-      status = "FULL_USED";
-    }
-
-    await executeQuery(
-      "UPDATE transactions SET balance = ?, usedAmount = ?, status = ?  WHERE id = ?",
-      [newBalance, totalSpent,status, transactionId]
-    );
-
-    res.json({ message: "Saved successfully", newBalance });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Save failed", details: err });
-  }
-});
-
-router.get("/all/:id", async (req, res) => {
-  try {
-    const transactionId = req.params.id;
-
-    const rows = await executeQuery(
-      `SELECT id, transaction_id, name, amount, 
-          DATE_FORMAT(date, '%Y-%m-%d') AS date, 
-          created_on
-   FROM balance_entries
-   WHERE transaction_id = ?`,
-      [transactionId]
-    );
-
-    const trx = await executeQuery(
-      "SELECT amount AS totalAmount, balance AS previousBalance FROM transactions WHERE id = ?",
-      [transactionId]
-    );
-
-    if (trx.length === 0) {
-      return res.status(404).json({ message: "Transaction not found" });
-    }
-
-    res.json({
-      list: rows,
-      totalAmount: Number(trx[0].totalAmount),
-      previousBalance: Number(trx[0].previousBalance)
+  rows.forEach(r => {
+    if (!r.name || !r.amount) return;
+    entries.push({
+      id: getNextId(entries),
+      transaction_id: transactionId,
+      name: r.name,
+      amount: r.amount,
+      date: r.date
     });
+  });
 
-  } catch (err) {
-    res.status(500).json({ error: "Database Error", details: err });
-  }
+  writeJSON("balanceEntries.json", entries);
+
+  let transactions = readJSON("transactions.json");
+  console.log("transactions", transactions);
+  
+  const trx = transactions.find(t => t.id === transactionId);
+  console.log("trx",trx);
+  
+
+  const spent = entries
+    .filter(e => e.transaction_id === transactionId)
+    .reduce((s, e) => s + Number(e.amount), 0);
+
+  trx.usedAmount = spent;
+  trx.balance = trx.amount - spent;
+  trx.status = spent === 0 ? "NOT_USED" :
+               trx.balance <= 0 ? "FULL_USED" : "PARTIAL_USED";
+
+  writeJSON("transactions.json", transactions);
+
+  res.json({ message: "Saved", newBalance: trx.balance });
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.get("/all/:id", (req, res) => {
+  const entries = readJSON("balanceEntries.json")
+    .filter(e => e.transaction_id == req.params.id);
+
+  const trx = readJSON("transactions.json")
+    .find(t => t.id == req.params.id);
+
+  res.json({
+    list: entries,
+    totalAmount: trx.amount,
+    previousBalance: trx.balance
+  });
+});
+
+router.delete("/delete/:id", (req, res) => {
   try {
-    const rowId = req.params.id;
+    const entryId = Number(req.params.id);
 
-    const rowData = await executeQuery(
-      "SELECT transaction_id FROM balance_entries WHERE id = ?",
-      [rowId]
-    );
+    // 1️⃣ Read balance entries
+    let entries = readJSON("balanceEntries.json");
+    const entry = entries.find(e => e.id === entryId);
 
-    if (!rowData || rowData.length === 0) {
+    if (!entry) {
       return res.status(404).json({ message: "Balance entry not found" });
     }
 
-    const transactionId = rowData[0].transaction_id;
+    const transactionId = entry.transaction_id;
 
-    await executeQuery("DELETE FROM balance_entries WHERE id = ?", [rowId]);
+    // 2️⃣ Remove the entry
+    entries = entries.filter(e => e.id !== entryId);
+    writeJSON("balanceEntries.json", entries);
 
-    const totalSpentData = await executeQuery(
-      "SELECT SUM(amount) AS totalSpent FROM balance_entries WHERE transaction_id = ?",
-      [transactionId]
-    );
+    // 3️⃣ Calculate total used amount for this transaction
+    const totalUsed = entries
+      .filter(e => e.transaction_id === transactionId)
+      .reduce((sum, e) => sum + Number(e.amount || 0), 0);
 
-    const totalSpent = Number(totalSpentData[0].totalSpent || 0);
+    // 4️⃣ Update transaction JSON
+    let transactions = readJSON("transactions.json");
+    const trxIndex = transactions.findIndex(t => t.id === transactionId);
 
-    const trx = await executeQuery(
-      "SELECT amount AS totalAmount FROM transactions WHERE id = ?",
-      [transactionId]
-    );
-    const totalAmount = trx.length ? Number(trx[0].totalAmount) : 0;
+    if (trxIndex !== -1) {
+      const totalAmount = Number(transactions[trxIndex].amount || 0);
+      const newBalance = totalAmount - totalUsed;
 
-    const newBalance = totalAmount - totalSpent;
-    await executeQuery(
-      "UPDATE transactions SET balance = ? WHERE id = ?",
-      [newBalance, transactionId]
-    );
+      transactions[trxIndex].usedAmount = totalUsed;
+      transactions[trxIndex].balance = newBalance;
 
-    res.json({ message: "Row deleted successfully", newBalance });
+      // Update status
+      if (newBalance === 0) {
+        transactions[trxIndex].status = "FULL_USED";
+      } else if (newBalance < totalAmount) {
+        transactions[trxIndex].status = "PARTIAL_USED";
+      } else {
+        transactions[trxIndex].status = "NOT_USED";
+      }
+
+      writeJSON("transactions.json", transactions);
+
+      // 5️⃣ Return updated transaction info
+      res.json({
+        message: "Entry deleted and transaction updated",
+        newBalance,
+        usedAmount: totalUsed,
+        status: transactions[trxIndex].status
+      });
+    } else {
+      res.json({
+        message: "Entry deleted but transaction not found",
+        newBalance: null
+      });
+    }
 
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Delete failed", details: err });
   }
 });
+
 
 
 module.exports = router;

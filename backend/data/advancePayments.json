@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "advance_item_id": 1,
+    "paymentAmount": 2000,
+    "date": "2025-07-19",
+    "balance": 27500
+  },
+  {
+    "id": 2,
+    "advance_item_id": 1,
+    "paymentAmount": 3000,
+    "date": "2025-08-23",
+    "balance": 24500
+  },
+  {
+    "id": 3,
+    "advance_item_id": 1,
+    "paymentAmount": 24500,
+    "date": "2025-10-20",
+    "balance": 0
+  },
+  {
+    "id": 4,
+    "advance_item_id": 2,
+    "paymentAmount": 551,
+    "date": "2025-08-04",
+    "balance": 51000
+  },
+  {
+    "id": 5,
+    "advance_item_id": 2,
+    "paymentAmount": 2500,
+    "date": "2025-08-31",
+    "balance": 48500
+  },
+  {
+    "id": 6,
+    "advance_item_id": 2,
+    "paymentAmount": 5000,
+    "date": "2025-09-27",
+    "balance": 43500
+  },
+  {
+    "id": 7,
+    "advance_item_id": 2,
+    "paymentAmount": 5000,
+    "date": "2025-10-19",
+    "balance": 38500
+  },
+  {
+    "id": 8,
+    "advance_item_id": 3,
+    "paymentAmount": 500,
+    "date": "2025-08-06",
+    "balance": 96500
+  },
+  {
+    "id": 9,
+    "advance_item_id": 3,
+    "paymentAmount": 9500,
+    "date": "2025-08-31",
+    "balance": 87000
+  },
+  {
+    "id": 10,
+    "advance_item_id": 3,
+    "paymentAmount": 50000,
+    "date": "2025-09-30",
+    "balance": 37000
+  },
+  {
+    "id": 11,
+    "advance_item_id": 3,
+    "paymentAmount": 20000,
+    "date": "2025-10-21",
+    "balance": 17000
+  },
+  {
+    "id": 12,
+    "advance_item_id": 3,
+    "paymentAmount": 17000,
+    "date": "2025-10-23",
+    "balance": 0
+  },
+  {
+    "id": 13,
+    "advance_item_id": 4,
+    "paymentAmount": 500,
+    "date": "2025-09-09",
+    "balance": 6000
+  },
+  {
+    "id": 14,
+    "advance_item_id": 4,
+    "paymentAmount": 6000,
+    "date": "2025-10-23",
+    "balance": 0
+  },
+  {
+    "id": 15,
+    "advance_item_id": 5,
+    "paymentAmount": 1000,
+    "date": "2025-09-29",
+    "balance": 2500
+  },
+  {
+    "id": 16,
+    "advance_item_id": 5,
+    "paymentAmount": 2500,
+    "date": "2025-10-23",
+    "balance": 0
+  },
+  {
+    "id": 17,
+    "advance_item_id": 6,
+    "paymentAmount": 2000,
+    "date": "2025-09-29",
+    "balance": 23000
+  },
+  {
+    "id": 18,
+    "advance_item_id": 6,
+    "paymentAmount": 3000,
+    "date": "2025-10-24",
+    "balance": 20000
+  },
+  {
+    "id": 19,
+    "advance_item_id": 7,
+    "paymentAmount": 1000,
+    "date": "2025-11-18",
+    "balance": 8000
+  },
+  {
+    "id": 20,
+    "advance_item_id": 8,
+    "paymentAmount": 9000,
+    "date": "2025-12-27",
+    "balance": 0
+  }
+]

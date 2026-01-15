@@ -1,137 +1,60 @@
 const express = require("express");
 const router = express.Router();
-const { executeQuery } = require("../db");
+const { readJSON, writeJSON, getNextId } = require("../utils/jsonDb");
 
-router.post("/add", async (req, res) => {
-  try {
-    const transaction = req.body;
+router.post("/add", (req, res) => {
+  let data = readJSON("transactions.json");
+  const t = req.body;
 
-    const status = transaction.status?.trim() || 'NOT_USED';
-
-    if (transaction.id && Number(transaction.id) > 0) {
-      const sqlUpdate = `
-        UPDATE transactions SET
-          description = ?,
-          amount = ?,
-          balance = ?,
-          category = ?,
-          paymentMethod = ?,
-          date = ?,
-          notes = ?,
-          status = ?
-        WHERE id = ?
-      `;
-
-      await executeQuery(sqlUpdate, [
-        transaction.description,
-        transaction.amount,
-        transaction.balance,
-        transaction.category,
-        transaction.paymentMethod,
-        transaction.date,
-        transaction.notes,
-        status,
-        transaction.id
-      ]);
-
-      return res.json({ message: "Transaction updated successfully" });
-
-    }
-
-    const sqlInsert = `
-      INSERT INTO transactions
-        (description, amount, usedAmount, balance, category, paymentMethod, date, notes, status)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-    `;
-
-    const result = await executeQuery(sqlInsert, [
-      transaction.description,
-      transaction.amount,
-      transaction.usedAmount,
-      transaction.amount,
-      transaction.category,
-      transaction.paymentMethod,
-      transaction.date,
-      transaction.notes,
-      status
-    ]);
-
-    res.json({ message: "Transaction saved", insertId: result.insertId });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Insert/Update failed", details: err });
+  if (t.id && t.id > 0) {
+    // Existing transaction → update
+    const trx = data.find(x => x.id === t.id);
+    if (!trx) return res.status(404).json({ message: "Transaction not found" });
+    Object.assign(trx, t);
+    writeJSON("transactions.json", data);
+    return res.json({ message: "Updated", id: t.id });
   }
+
+  // New transaction → generate unique ID
+  const newId = getNextId(data);
+  console.log("newId:", newId);
+  
+
+  const newTransaction = {
+        ...t,
+    id: newId,
+    usedAmount: 0,
+    balance: t.amount,
+    status: "NOT_USED"
+  };
+console.log("newTransaction",newTransaction);
+
+  data.push(newTransaction);
+  writeJSON("transactions.json", data);
+
+  res.json({ message: "Inserted", id: newId });
 });
 
 
-router.get("/all", async (req, res) => {
-  try {
-    const rows = await executeQuery(
-      `SELECT 
-         id,
-         description,
-         amount,
-         usedAmount,
-         balance,
-         category,
-         paymentMethod,
-         DATE_FORMAT(date, '%Y-%m-%d') AS date,
-         notes,
-         status
-       FROM transactions`
-    );
-    res.json(rows);
-  } catch (err) {
-    res.status(500).json({ error: "Database Error", details: err });
-  }
+router.get("/all", (req, res) => {
+  res.json(readJSON("transactions.json"));
 });
 
-
-router.delete("/delete/:id", async (req, res) => {
-  try {
-    const transactionId = req.params.id;
-
-    const trxData = await executeQuery("SELECT id FROM transactions WHERE id = ?", [transactionId]
-    );
-
-    if (!trxData || trxData.length === 0) {
-      return res.status(404).json({ message: "Transaction not found" });
-    }
-
-    await executeQuery("DELETE FROM balance_entries WHERE transaction_id = ?", [transactionId]
-    );
-
-    await executeQuery("DELETE FROM transactions WHERE id = ?", [transactionId]
-    );
-
-    res.json({ message: "Transaction and its balance entries deleted successfully" });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Delete failed", details: err });
-  }
+router.get("/:id", (req, res) => {
+  const trx = readJSON("transactions.json").find(t => t.id == req.params.id);
+  res.json(trx);
 });
 
-router.get("/:id", async (req, res) => {
-  try {
-    const transactionId = req.params.id;
-
-    const rows = await executeQuery(
-      "SELECT  id,description,amount,usedAmount,balance,category,paymentMethod,DATE_FORMAT(date, '%Y-%m-%d') AS date,notes,status FROM transactions WHERE id = ? ",
-      [transactionId]
-    );
-
-    if (!rows || rows.length === 0) {
-      return res.status(404).json({ message: "Transaction not found" });
-    }
-
-    res.json(rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: "Database Error", details: err });
-  }
+router.delete("/delete/:id", (req, res) => {
+  writeJSON(
+    "transactions.json",
+    readJSON("transactions.json").filter(t => t.id != req.params.id)
+  );
+  writeJSON(
+    "balanceEntries.json",
+    readJSON("balanceEntries.json").filter(b => b.transaction_id != req.params.id)
+  );
+  res.json({ message: "Deleted" });
 });
-
-
 
 module.exports = router;

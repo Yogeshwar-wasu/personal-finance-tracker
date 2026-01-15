@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "Hall",
+    "amount": 29500,
+    "status": "FULL_USED"
+  },
+  {
+    "id": 2,
+    "name": "Camera",
+    "amount": 51551,
+    "status": "PARTIAL_USED"
+  },
+  {
+    "id": 3,
+    "name": "Aachari",
+    "amount": 97000,
+    "status": "FULL_USED"
+  },
+  {
+    "id": 4,
+    "name": "Events",
+    "amount": 6500,
+    "status": "FULL_USED"
+  },
+  {
+    "id": 5,
+    "name": "Haar",
+    "amount": 3500,
+    "status": "FULL_USED"
+  },
+  {
+    "id": 6,
+    "name": "dhol",
+    "amount": 25000,
+    "status": "PARTIAL_USED"
+  },
+  {
+    "id": 7,
+    "name": "Dj",
+    "amount": 9000,
+    "status": "PARTIAL_USED"
+  },
+  {
+    "id": 8,
+    "name": "card",
+    "amount": 9000,
+    "status": "FULL_USED"
+  },
+  {
+    "id": 9,
+    "name": "bus",
+    "amount": 10000,
+    "status": "NOT_USED"
+  },
+  {
+    "id": 10,
+    "name": "daika",
+    "amount": 3000,
+    "status": "NOT_USED"
+  },
+  {
+    "id": 11,
+    "name": "haldi decoration",
+    "amount": 10000,
+    "status": "NOT_USED"
+  },
+  {
+    "id": 12,
+    "name": "haldi aachari",
+    "amount": 7000,
+    "status": "NOT_USED"
+  },
+  {
+    "id": 13,
+    "name": "haar + car",
+    "amount": 6000,
+    "status": "NOT_USED"
+  },
+  {
+    "id": 14,
+    "name": "fatake",
+    "amount": 5000,
+    "status": "NOT_USED"
+  }
+]

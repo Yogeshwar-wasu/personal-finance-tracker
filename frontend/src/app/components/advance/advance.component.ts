@@ -17,7 +17,7 @@ interface AdvanceRow {
   name: string;
   amount: number;
   payments: Payment[];
-  status:string;
+  status: string;
 }
 
 @Component({
@@ -55,18 +55,26 @@ export class AdvanceComponent implements OnInit {
 
 
   addMainRow() {
-    this.advanceRows.push({ name: '', amount: 0, payments: [],status:'' });
+    this.advanceRows.push({ name: '', amount: 0, payments: [], status: '' });
+    this.calculateTotals();
   }
 
   deleteMainRow(index: number) {
     const row = this.advanceRows[index];
+    if (!confirm(`Are you sure you want to delete this advance?`)) {
+      return;
+    }
     if (row.id) {
       this.apiService.deleteAdvanceRow(row.id).subscribe({
         next: () => {
           this.advanceRows.splice(index, 1);
           this.calculateTotals();
+          alert('Advance deleted successfully ✅');
         },
-        error: (err) => console.error('Error deleting main row:', err)
+        error: (err) => {
+          console.error('Error deleting main row:', err);
+          alert('Failed to delete advance ❌');
+        }
       });
     } else {
       this.advanceRows.splice(index, 1);
@@ -82,22 +90,37 @@ export class AdvanceComponent implements OnInit {
       lastBalance = row.payments[row.payments.length - 1].balance;
     }
 
+    if (lastBalance <= 0) {
+      alert('No balance available ❌');
+      return;
+    }
+
     row.payments.push({
       paymentAmount: 0,
       date: '',
       balance: lastBalance
     });
+
+    this.calculateTotals();
+
   }
 
   deletePayment(mainIndex: number, paymentIndex: number) {
+    if (!confirm('Are you sure you want to delete this payment?')) {
+      return;
+    }
     const payment = this.advanceRows[mainIndex].payments[paymentIndex];
     if (payment.id) {
       this.apiService.deletePayment(payment.id).subscribe({
         next: () => {
           this.advanceRows[mainIndex].payments.splice(paymentIndex, 1);
           this.calculateTotals();
+          alert('Payment deleted successfully ✅');
         },
-        error: (err) => console.error('Error deleting payment:', err)
+        error: (err) => {
+          console.error('Error deleting payment:', err);
+          alert('Failed to delete payment ❌');
+        }
       });
     } else {
       this.advanceRows[mainIndex].payments.splice(paymentIndex, 1);
@@ -106,11 +129,30 @@ export class AdvanceComponent implements OnInit {
   }
 
   calculateTotals() {
-    this.totalAmount = this.advanceRows.reduce((sum, row) => sum + row.amount, 0);
-    this.amountUsed = this.advanceRows.reduce((sum, row) =>
-      sum + row.payments.reduce((pSum, p) => pSum + p.paymentAmount, 0)
-      , 0);
-    this.balanceAmount = this.totalAmount - this.amountUsed;
+    let total = 0;
+    let used = 0;
+
+    this.advanceRows.forEach(row => {
+      const rowAmount = Number(row.amount) || 0;
+      total += rowAmount;
+
+      let runningBalance = rowAmount;
+
+      row.payments.forEach(payment => {
+        const pay = Number(payment.paymentAmount) || 0;
+        used += pay;
+
+        runningBalance -= pay;
+        payment.balance = runningBalance < 0 ? 0 : runningBalance;
+      });
+
+      // auto status
+      row.status = runningBalance <= 0 ? 'COMPLETED' : 'PENDING';
+    });
+
+    this.totalAmount = total;
+    this.amountUsed = used;
+    this.balanceAmount = total - used;
   }
 
   // Save all data (create/update)
@@ -121,11 +163,11 @@ export class AdvanceComponent implements OnInit {
         console.log('Data saved successfully', res);
         this.loadAdvanceRows(); // reload after save
       },
-      error: (err) =>{
-              alert('Failed to save advance details ❌');
-      console.error(err);
+      error: (err) => {
+        alert('Failed to save advance details ❌');
+        console.error(err);
 
-      } 
+      }
     });
   }
 

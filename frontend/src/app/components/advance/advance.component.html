@@ -49,14 +49,14 @@
                         <input type="text" [(ngModel)]="row.name" placeholder="Expense Name">
                     </td>
                     <td>
-                        <input type="number" [(ngModel)]="row.amount"   (ngModelChange)="recalculateRowBalance(i)" placeholder="Amount">
+                        <input type="number" [(ngModel)]="row.amount"   (ngModelChange)="calculateTotals()" placeholder="Amount">
                     </td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td class="status" [ngClass]="row.status">{{row.status}}</td>
                     <td>
-                        <button class="add-btn" (click)="addPayment(i)">
+                        <button class="add-btn" (click)="addPayment(i)"  [disabled]="row.status === 'COMPLETED'">
                             <i class="fas fa-plus"></i>
                         </button>
                         <button class="delete-btn" (click)="deleteMainRow(i)">
