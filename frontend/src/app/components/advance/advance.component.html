@@ -1,0 +1,99 @@
+<div class="advance-container">
+
+    <div class="header-row">
+        <h2>Advance Payment</h2>
+
+        <div class="amount-box">
+            <label>Total Amount:</label>
+            <span>₹ {{ totalAmount }}</span>
+        </div>
+
+        <div class="amount-box">
+            <label>Amount Paid:</label>
+            <span>₹ {{ amountUsed }}</span>
+        </div>
+
+        <div class="amount-box">
+            <label>Amount Balance:</label>
+            <span>₹ {{ balanceAmount }}</span>
+        </div>
+    </div>
+
+
+    <table class="balance-table">
+        <thead>
+            <tr>
+                <th>
+                    <div class="th-with-button">
+                        <span>Sr No</span>
+                        <button class="add-expense-btn" (click)="addMainRow()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </th>
+                <th>Name (Expense Name)</th>
+                <th>Amount</th>
+                <th>Payment</th>
+                <th>Date</th>
+                <th>Balance</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let row of advanceRows; let i = index">
+                <!-- Main row -->
+                <tr>
+                    <td>{{ i + 1 }}</td>
+                    <td>
+                        <input type="text" [(ngModel)]="row.name" placeholder="Expense Name">
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)]="row.amount"   (ngModelChange)="recalculateRowBalance(i)" placeholder="Amount">
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="status" [ngClass]="row.status">{{row.status}}</td>
+                    <td>
+                        <button class="add-btn" (click)="addPayment(i)">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="delete-btn" (click)="deleteMainRow(i)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <!-- Sub-rows for payments -->
+                <tr *ngFor="let payment of row.payments; let j = index">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="number" [(ngModel)]="payment.paymentAmount" (ngModelChange)="recalculateRowBalance(i)" placeholder="Payment">
+                    </td>
+                    <td>
+                        <input type="date" [(ngModel)]="payment.date" placeholder="Date">
+                    </td>
+                    <td>
+                        <input type="number" [(ngModel)]="payment.balance" placeholder="Balance" readonly>
+                    </td>
+                    <td></td>
+                    <td>
+                        <button class="delete-btn" (click)="deletePayment(i, j)">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr class="row-separator">
+                    <td colspan="8"></td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+
+     <div class="actions">
+        <button class="save-btn" (click)="saveAdvanceRows()">Save</button>
+    </div>
+</div>

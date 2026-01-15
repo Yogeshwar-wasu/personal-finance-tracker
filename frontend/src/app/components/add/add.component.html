@@ -1,0 +1,79 @@
+<div class="add-container">
+  <h2>Add Transaction</h2>
+
+  <form #f="ngForm" novalidate (ngSubmit)="save(f)" class="form-grid">
+
+    <div class="form-row">
+      <label>Description:</label>
+      <div class="input-wrapper">
+        <input type="text" name="description" [(ngModel)]="transaction.description" required #description="ngModel" />
+        <span class="error-msg" *ngIf="(f.submitted || description.touched) && description.invalid">
+          Description is required
+        </span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Amount:</label>
+      <div class="input-wrapper">
+        <input type="number" name="amount" [(ngModel)]="transaction.amount" required min="1" #amount="ngModel" />
+        <span class="error-msg" *ngIf="(f.submitted || amount.touched) && amount.invalid">
+          Enter valid amount
+        </span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Category:</label>
+      <div class="input-wrapper">
+        <input type="text" name="category" [(ngModel)]="transaction.category" required #category="ngModel" />
+        <span class="error-msg" *ngIf="(f.submitted || category.touched) && category.invalid">
+          Category is required
+        </span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Payment Method:</label>
+      <div class="input-wrapper">
+        <input type="text" name="paymentMethod" [(ngModel)]="transaction.paymentMethod" required
+          #paymentMethod="ngModel" />
+        <span class="error-msg" *ngIf="(f.submitted || paymentMethod.touched) && paymentMethod.invalid">
+          Payment method is required
+        </span>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Date:</label>
+      <div class="input-wrapper">
+        <input type="date" name="date" [(ngModel)]="transaction.date" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Status:</label>
+      <div class="input-wrapper">
+        <select name="status" [(ngModel)]="transaction.status" class="status-select">
+          <option value="FULL_USED">FULL_USED</option>
+          <option value="PARTIAL_USED">PARTIAL_USED</option>
+          <option value="NOT_USED">NOT_USED</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>Notes:</label>
+      <div class="input-wrapper">
+        <textarea name="notes" [(ngModel)]="transaction.notes"></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit">
+        {{ Id ? 'Update' : 'Save' }}
+      </button>
+    </div>
+
+  </form>
+</div>

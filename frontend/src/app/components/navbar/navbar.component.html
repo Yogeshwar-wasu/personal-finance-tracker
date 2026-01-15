@@ -1,0 +1,11 @@
+<nav class="navbar card">
+  <div class="title">Personal Finance Tracker</div>
+  <div class="links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+    <a routerLink="/transactions" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Transactions</a>
+    <a routerLink="/add" routerLinkActive="active">Add</a>
+    <a routerLink="/balance" routerLinkActive="active">Balance</a>
+    <a routerLink="/advance" routerLinkActive="active">Advance payment</a>
+  </div>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+</nav>

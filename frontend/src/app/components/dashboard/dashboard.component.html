@@ -1,0 +1,74 @@
+<div class="dashboard-container">
+
+  <!-- Header -->
+  <div class="dashboard-header">
+    <h2>Dashboard</h2>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="summary-grid">
+    <div class="summary-card income">
+      <h4>Total Amount</h4>
+      <p>{{ totalIncome | currency:'INR' }}</p>
+    </div>
+
+    <div class="summary-card expense">
+      <h4>Total Expense</h4>
+      <p>{{ totalExpense | currency:'INR' }}</p>
+    </div>
+
+    <div class="summary-card balance">
+      <h4>Current Balance</h4>
+      <p>{{ balance | currency:'INR' }}</p>
+    </div>
+  </div>
+
+  <!-- Recent Transactions -->
+  <div class="table-card">
+    <div class="table-header">
+      <h3>Recent Transactions</h3>
+    </div>
+
+    <table class="transactions-table">
+      <thead>
+        <tr>
+          <th>Sr No</th>
+          <th>Description</th>
+          <th>Total Amount</th>
+          <th>Total Expense</th>
+          <th>Balance</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of recentTransactions; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ t.description }}</td>
+          <!-- Total Amount -->
+          <td class="credit">
+            {{ t.amount | currency:'INR' }}
+          </td>
+
+          <!-- Total Expense -->
+          <td class="debit">
+            {{ (t.amount - t.balance) | currency:'INR' }}
+          </td>
+
+          <!-- Balance -->
+          <td class="balance">
+            {{ t.balance | currency:'INR' }}
+          </td>
+          <td>{{ t.date | date:'dd-MM-yyyy' }}</td>
+          <td>
+            <span class="status" [ngClass]="t.status">
+              {{ t.status }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

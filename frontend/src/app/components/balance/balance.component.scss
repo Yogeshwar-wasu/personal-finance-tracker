@@ -1,0 +1,188 @@
+.balance-container {
+  width: 95%;
+  max-width: 1300px;
+  margin: 15px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #36038a, #b390f3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.header-row h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.amount-box {
+  background: #ffffff;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.balance-table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.balance-table th {
+  background: #f3f0ff;
+  color: #6a4ca3;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 14px;
+  text-align: center;
+}
+
+.balance-table td {
+  padding: 3px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.balance-table th:nth-child(1),
+.balance-table td:nth-child(1) {
+  width: 8%;
+}
+
+.balance-table th:nth-child(2),
+.balance-table td:nth-child(2) {
+  width: 35%;
+  text-align: left;
+}
+
+.balance-table th:nth-child(3),
+.balance-table td:nth-child(3) {
+  width: 15%;
+}
+
+.balance-table th:nth-child(4),
+.balance-table td:nth-child(4) {
+  width: 20%;
+}
+
+.balance-table th:nth-child(5),
+.balance-table td:nth-child(5) {
+  width: 12%;
+}
+
+.balance-table tbody tr:hover {
+  background-color: #f9f7ff;
+}
+
+.balance-table input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.balance-table input:focus {
+  outline: none;
+  border-color: #866ab4;
+  box-shadow: 0 0 0 2px rgba(134, 106, 180, 0.2);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.add-btn,
+.save-btn {
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-btn {
+  background: #4caf50;
+  color: white;
+}
+
+.add-btn:hover:not(:disabled) {
+  background: #43a047;
+  transform: translateY(-1px);
+}
+
+.save-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #1976d2;
+  transform: translateY(-1px);
+}
+
+.add-btn:disabled,
+.save-btn:disabled,
+.excel-btn:disabled {
+  background: #9fc9ee;
+  cursor: not-allowed;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.delete-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.excel-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #217346;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.excel-btn i {
+  font-size: 16px;
+}
+
+.excel-btn:hover:not(:disabled) {
+  background-color: #1a5e38;
+}

@@ -1,0 +1,119 @@
+/* Full-page background */
+.login-wrapper {
+  height: 97vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f88f5f, #438ac4);
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Login card */
+.login-card {
+  width: 360px;
+  padding: 30px;
+  background:linear-gradient(135deg, #6df38e, #3efded);
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+}
+
+/* Avatar */
+.avatar {
+  width: 150px;
+  height: 150px;
+  margin: -60px auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f840c1;
+    background: #fff;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.login-card h2 {
+  margin-bottom: 5px;
+  background: linear-gradient(135deg, #0b0c0c, #f75656);
+  background-clip: text;          /* standard */
+  -webkit-background-clip: text;  /* Chrome, Safari */
+  color: transparent;              /* standard */
+  -webkit-text-fill-color: transparent; /* WebKit */
+}
+
+
+.subtitle {
+  margin-bottom: 25px;
+  color: #55440e;
+  font-size: 14px;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+input {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.15);
+}
+
+/* Button + spinner */
+button {
+  width: 70%;
+  padding: 12px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #a096fa, #160381);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s, transform 0.1s;
+}
+button:hover {
+  background:linear-gradient(135deg,#160381, #a096fa, );
+}
+button:active {
+  transform: scale(0.98);
+}
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* Spinner */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid #1976d2;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.form-group input::placeholder {
+  text-align: center;
+}

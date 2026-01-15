@@ -1,0 +1,63 @@
+<div class="balance-container">
+
+    <div class="header-row">
+        <h2>Balance / Expense Entry</h2>
+
+        <div class="amount-box">
+            <label>Total Amount:</label>
+            <span>₹ {{ totalAmount }}</span>
+        </div>
+
+        <div class="amount-box">
+            <label>Used Amount:</label>
+            <span>₹ {{ amountUsed }}</span>
+        </div>
+
+        <div class="amount-box">
+            <label>Balance Amount:</label>
+            <span>₹ {{ balanceAmount }}</span>
+        </div>
+
+        <button class="excel-btn" [disabled]="!transactionId" (click)="exportToExcel()">
+            <i class="fa fa-file-excel"></i>
+            Export to Excel
+        </button>
+    </div>
+
+    <table class="balance-table">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Name (Expense Name)</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let row of balanceRows; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>
+                    <input type="text" [(ngModel)]="row.name" placeholder="Enter expense name" />
+                </td>
+                <td>
+                    <input type="number" [(ngModel)]="row.amount" (ngModelChange)="calculateAmounts()"
+                        placeholder="Amount" />
+                </td>
+                <td>
+                    <input type="date" [(ngModel)]="row.date" (ngModelChange)="calculateAmounts()" />
+                </td>
+                <td>
+                    <button class="delete-btn" (click)="deleteRow(i)">✕</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="actions">
+        <button class="add-btn" (click)="addRow()" [disabled]="!transactionId">+ Add Row</button>
+        <button class="save-btn" (click)="save()" [disabled]="!transactionId">Save</button>
+    </div>
+
+</div>

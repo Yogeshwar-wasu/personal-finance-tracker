@@ -1,0 +1,252 @@
+.advance-container {
+  width: 95%;
+  max-width: 1300px;
+  margin: 15px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #36038a, #b390f3);
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.header-row h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.amount-box {
+  background: #ffffff;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.balance-table {
+  width: 90%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.balance-table th {
+  background: #f3f0ff;
+  color: #6a4ca3;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 14px;
+  text-align: center;
+}
+
+.balance-table td {
+  padding: 3px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.balance-table th:nth-child(1),
+.balance-table td:nth-child(1) {
+  width: 10%;
+}
+
+.balance-table th:nth-child(2),
+.balance-table td:nth-child(2) {
+  width: 30%;
+  text-align: left;
+}
+
+.balance-table th:nth-child(3),
+.balance-table td:nth-child(3) {
+  width: 15%;
+}
+
+.balance-table th:nth-child(4),
+.balance-table td:nth-child(4) {
+  width: 20%;
+}
+
+.balance-table th:nth-child(5),
+.balance-table td:nth-child(5) {
+  width: 15%;
+}
+
+.balance-table th:nth-child(6),
+.balance-table td:nth-child(6) {
+  width: 20%;
+}
+
+.balance-table th:nth-child(7),
+.balance-table td:nth-child(7) {
+  width: 15%;
+}
+
+.balance-table th:nth-child(8),
+.balance-table td:nth-child(8) {
+  width: 15%;
+}
+
+
+.balance-table tbody tr:hover {
+  background-color: #f9f7ff;
+}
+
+.balance-table input {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  box-sizing: border-box;
+}
+
+.balance-table input:focus {
+  outline: none;
+  border-color: #866ab4;
+  box-shadow: 0 0 0 2px rgba(134, 106, 180, 0.2);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+.add-btn, .delete-btn {
+    background-color: transparent;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px 6px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add some space between buttons */
+.add-btn {
+    border-color: #4CAF50; /* green border */
+    margin-right: 8px; /* <-- space between add and delete */
+}
+
+.add-btn i {
+    color: #4CAF50; /* green icon */
+}
+
+.delete-btn {
+    border-color: #f44336; /* red border */
+}
+
+.delete-btn i {
+    color: #f44336; /* red icon */
+}
+
+/* Hover effects */
+.add-btn:hover {
+    background-color: #4CAF50;
+}
+
+.add-btn:hover i {
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #f44336;
+}
+
+.delete-btn:hover i {
+    color: white;
+}
+.th-with-button {
+    display: flex;
+    align-items: center;
+    gap: 6px; /* space between text and button */
+}
+
+.add-expense-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.add-expense-btn i {
+    font-size: 14px;
+}
+
+.add-expense-btn:hover {
+    background-color: #45a049;
+}
+
+.row-separator td {
+    border-bottom: 2px solid #0c0c0c; /* horizontal line */
+    padding: 0; /* optional: reduce extra spacing */
+    background-color: transparent;
+}
+
+.save-btn {
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.save-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.save-btn:hover:not(:disabled) {
+  background: #1976d2;
+  transform: translateY(-1px);
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status.NOT_USED {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.PARTIAL_USED {
+  background: #fff8e1;
+  color: #ff8f00;
+}
+
+.status.FULL_USED {
+  background: #ffebee;
+  color: #c62828;
+}

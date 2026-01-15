@@ -1,0 +1,66 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+
+  .title {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    font-weight: normal;
+    color: #fc6812;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    a {
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #2b6cb0;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: 0.2s ease;
+
+      &:hover {
+        background: #e2e8f0;
+      }
+
+      &.active {
+        background: #2b6cb0;
+        color: white;
+      }
+    }
+  }
+}
+
+button {
+  width: 7%;
+  padding: 5px;
+  margin-top: 2px;
+  background: linear-gradient(135deg, #faaa96, #f71b14);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s, transform 0.1s;
+}
+button:hover {
+  background:linear-gradient(135deg,#160381, #a096fa, );
+}
+button:active {
+  transform: scale(0.98);
+}
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.8;
+}

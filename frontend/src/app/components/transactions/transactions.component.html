@@ -1,0 +1,42 @@
+<div class="table-wrapper">
+  <table class="transactions-table">
+    <thead>
+      <tr>
+        <th (click)="sortData('sr')">Sr No</th>
+        <th (click)="sortData('description')">Description</th>
+        <th (click)="sortData('amount')">Amount</th>
+        <th (click)="sortData('usedAmount')">Used Amount</th>
+        <th (click)="sortData('balance')">Balance</th>
+        <th (click)="sortData('category')">Category</th>
+        <th (click)="sortData('paymentMethod')">Payment Method</th>
+        <th (click)="sortData('date')">Date</th>
+        <th (click)="sortData('notes')">Notes</th>
+        <th (click)="sortData('status')">Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of transactions; let i = index">
+        <td>{{ i+1 }}</td>
+        <td (click)="addDetails(t)" class="addDetails">{{ t.description }}</td>
+        <td [ngClass]="t.amount >= 0 ? 'credit' : 'debit'">
+          {{ t.amount | currency:'INR':'symbol':'1.0-0' }}
+        </td>
+        <td class="debit">
+          {{ t.usedAmount | currency:'INR':'symbol':'1.0-0' }} </td>
+        <td [ngClass]="t.balance >= 0 ? 'credit' : 'debit'">
+          {{ t.balance | currency:'INR':'symbol':'1.0-0' }}
+        </td>
+        <td>{{ t.category }}</td>
+        <td>{{ t.paymentMethod }}</td>
+        <td>{{ t.date | date: 'dd-MM-yyyy' }}</td>
+        <td>{{ t.notes }}</td>
+        <td>{{ t.status }}</td>
+        <td>
+          <button class="edit-btn" (click)="editRow(t)">✎</button>
+          <button class="delete-btn" (click)="deleteRow(i)">✕</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
