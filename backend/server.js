@@ -22,7 +22,7 @@ app.use("/api/advance", advanceRoutes);
 
 // ===================== SERVE ANGULAR =====================
 const angularDistPath = path.join(__dirname, "../frontend/dist/frontend/browser");
-app.use(express.static(angularDistPath)); 
+app.use(express.static(angularDistPath));  
 
 
 // Catch all frontend routes and serve Angular index.html
