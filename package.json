@@ -1,14 +1,17 @@
 {
   "name": "personal-finance-tracker",
   "version": "1.0.0",
-  "main": "backend/server.js",
   "scripts": {
-  "start": "node backend/server.js",
-  "build-frontend": "cd frontend && npm install && npx ng build --configuration production"
-},
+    "start": "node backend/server.js",
+    "build-frontend": "cd frontend && npm install && npx ng build --configuration production"
+  },
   "dependencies": {
     "express": "^4.18.2",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "path": "^0.12.7",
+    "body-parser": "^1.20.2", 
+    "file-saver": "^2.0.5" ,
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.15.3"
   }
 }
